@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctor Registration</title>
+    <link rel="stylesheet" href="doctor-style.css">
+</head>
+
+<body>
+
+<div class="doctor-container">
+
+    <h1>Doctor Registration</h1>
+    <p class="subtitle">Create your doctor account</p>
+
+    <form id="doctorForm">
+
+        <label>Doctor Name</label>
+        <input type="text" id="doctorName"
+               placeholder="Enter doctor name">
+
+        <label>Email</label>
+        <input type="text" id="doctorEmail"
+               placeholder="Enter email">
+
+        <label>Phone Number</label>
+        <input type="text" id="doctorPhone"
+               placeholder="Enter phone number">
+
+        <label>Gender</label>
+        <div class="gender">
+            <input type="radio" name="gender" value="Male"> Male
+            <input type="radio" name="gender" value="Female"> Female
+        </div>
+
+        <label>Specialization</label>
+        <select id="specialization">
+            <option value="">Select Specialization</option>
+            <option value="General Medicine">General Medicine</option>
+            <option value="Gynecology">Gynecology</option>
+            <option value="Cardiology">Cardiology</option>
+            <option value="Dermatology">Dermatology</option>
+            <option value="Pediatrics">Pediatrics</option>
+            <option value="Neurology">Neurology</option>
+            <option value="Orthopedics">Orthopedics</option>
+            <option value="ENT">ENT</option>
+            <option value="Ophthalmology">Ophthalmology</option>
+            <option value="Psychiatry">Psychiatry</option>
+            <option value="Pulmonology">Pulmonology</option>
+            <option value="Gastroenterology">Gastroenterology</option>
+        </select>
+
+        <label>Qualification</label>
+        <input type="text" id="qualification"
+               placeholder="Example: MBBS, MD">
+
+        <label>Medical Registration Number</label>
+        <input type="text" id="registrationNumber"
+               placeholder="Enter registration number">
+
+        <label>Years of Experience</label>
+        <input type="number" id="experience"
+               placeholder="Enter years of experience">
+
+        <label>Hospital / Clinic Name</label>
+        <input type="text" id="hospital"
+               placeholder="Enter hospital or clinic name">
+
+        <label>Available Days</label>
+        <div class="days">
+            <input type="checkbox" value="Monday"> Monday
+            <input type="checkbox" value="Tuesday"> Tuesday
+            <input type="checkbox" value="Wednesday"> Wednesday
+            <input type="checkbox" value="Thursday"> Thursday
+            <input type="checkbox" value="Friday"> Friday
+            <input type="checkbox" value="Saturday"> Saturday
+        </div>
+
+        <label>Available Time</label>
+        <input type="time" id="availableTime">
+
+        <label>Password</label>
+        <input type="password" id="doctorPassword"
+               placeholder="Enter password">
+
+        <label>Confirm Password</label>
+        <input type="password" id="confirmDoctorPassword"
+               placeholder="Confirm password">
+
+        <button type="submit">Register</button>
+
+    </form>
+
+</div>
+
+<script src="doctor-validation.js"></script>
+
+</body>
+</html>

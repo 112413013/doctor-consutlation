@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e3f2fd;
+}
+
+.doctor-container {
+    width: 450px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    color: #1565c0;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #607d8b;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #263238;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="time"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #90a4ae;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #1565c0;
+}
+
+.gender {
+    margin-top: 8px;
+}
+
+.gender input {
+    margin-right: 5px;
+}
+
+.days {
+    margin-top: 8px;
+    line-height: 30px;
+}
+
+.days input {
+    margin-right: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 25px;
+    background-color: #1565c0;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0d47a1;
+}

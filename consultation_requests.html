@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Medico Connect - Consultation Requests</title>
+
+    <link rel="stylesheet" href="consultation_requests.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+
+        <div class="logo">
+            <span>MEDICO</span> CONNECT
+        </div>
+
+        <a href="doctor_dashboard.html" class="back-btn">
+            ← Dashboard
+        </a>
+
+    </header>
+
+
+    <!-- Main Content -->
+    <main class="requests-container">
+
+        <h1>Consultation Requests</h1>
+
+        <p class="subtitle">
+            View and manage patient consultation requests
+        </p>
+
+
+        <!-- Request 1 -->
+        <section class="request-card">
+
+            <div class="patient-info">
+
+                <div class="patient-icon">
+                    👤
+                </div>
+
+                <div>
+                    <h2>Sarah Johnson</h2>
+                    <p>Requested Consultation</p>
+                </div>
+
+            </div>
+
+
+            <div class="request-details">
+
+                <div>
+                    <label>Requested Date</label>
+                    <p>06 September 2026</p>
+                </div>
+
+                <div>
+                    <label>Requested Time</label>
+                    <p>5:00 PM</p>
+                </div>
+
+                <div>
+                    <label>Reason</label>
+                    <p>Chest discomfort</p>
+                </div>
+
+            </div>
+
+
+            <div class="request-actions">
+
+                <button class="accept-btn" onclick="acceptRequest(this)">
+                    Accept
+                </button>
+
+                <button class="reject-btn" onclick="rejectRequest(this)">
+                    Reject
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Request 2 -->
+        <section class="request-card">
+
+            <div class="patient-info">
+
+                <div class="patient-icon">
+                    👤
+                </div>
+
+                <div>
+                    <h2>Michael Brown</h2>
+                    <p>Requested Consultation</p>
+                </div>
+
+            </div>
+
+
+            <div class="request-details">
+
+                <div>
+                    <label>Requested Date</label>
+                    <p>06 September 2026</p>
+                </div>
+
+                <div>
+                    <label>Requested Time</label>
+                    <p>6:00 PM</p>
+                </div>
+
+                <div>
+                    <label>Reason</label>
+                    <p>Regular health consultation</p>
+                </div>
+
+            </div>
+
+
+            <div class="request-actions">
+
+                <button class="accept-btn" onclick="acceptRequest(this)">
+                    Accept
+                </button>
+
+                <button class="reject-btn" onclick="rejectRequest(this)">
+                    Reject
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Request 3 -->
+        <section class="request-card">
+
+            <div class="patient-info">
+
+                <div class="patient-icon">
+                    👤
+                </div>
+
+                <div>
+                    <h2>Emily Davis</h2>
+                    <p>Requested Consultation</p>
+                </div>
+
+            </div>
+
+
+            <div class="request-details">
+
+                <div>
+                    <label>Requested Date</label>
+                    <p>07 September 2026</p>
+                </div>
+
+                <div>
+                    <label>Requested Time</label>
+                    <p>4:30 PM</p>
+                </div>
+
+                <div>
+                    <label>Reason</label>
+                    <p>Follow-up consultation</p>
+                </div>
+
+            </div>
+
+
+            <div class="request-actions">
+
+                <button class="accept-btn" onclick="acceptRequest(this)">
+                    Accept
+                </button>
+
+                <button class="reject-btn" onclick="rejectRequest(this)">
+                    Reject
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="consultation_requests.js"></script>
+
+</body>
+</html>

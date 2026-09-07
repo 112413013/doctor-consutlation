@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+
+    background-color: #f4f8fc;
+
+    color: #333;
+}
+
+
+/* ================= HEADER ================= */
+
+.header {
+
+    background-color: #0b4f8a;
+
+    color: white;
+
+    padding: 18px 40px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+.logo {
+
+    font-size: 24px;
+
+    font-weight: bold;
+}
+
+
+.back-btn {
+
+    background-color: white;
+
+    color: #0b4f8a;
+
+    text-decoration: none;
+
+    padding: 8px 16px;
+
+    border-radius: 5px;
+
+    font-weight: bold;
+}
+
+
+.back-btn:hover {
+
+    background-color: #e4f0fa;
+}
+
+
+/* ================= MAIN ================= */
+
+.history-container {
+
+    width: 90%;
+
+    max-width: 1000px;
+
+    margin: 40px auto;
+}
+
+
+.history-container h1 {
+
+    color: #0b4f8a;
+
+    margin-bottom: 8px;
+}
+
+
+.subtitle {
+
+    color: #777;
+
+    margin-bottom: 25px;
+}
+
+
+/* ================= SEARCH ================= */
+
+.search-card {
+
+    background-color: white;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 3px 10px #ddd;
+}
+
+
+.search-card input {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+
+.search-card input:focus {
+
+    border-color: #0b4f8a;
+}
+
+
+/* ================= HISTORY CARD ================= */
+
+.history-card {
+
+    background-color: white;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 3px 10px #ddd;
+}
+
+
+.history-card h2 {
+
+    color: #0b4f8a;
+
+    margin-bottom: 20px;
+}
+
+
+/* ================= HISTORY ITEM ================= */
+
+.history-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background-color: #f4f8fc;
+
+    padding: 20px;
+
+    margin-bottom: 12px;
+
+    border-left: 4px solid #0b4f8a;
+
+    border-radius: 7px;
+}
+
+
+.history-info {
+
+    flex: 1;
+}
+
+
+.history-info h3 {
+
+    color: #0b4f8a;
+
+    margin-bottom: 8px;
+}
+
+
+.history-info p {
+
+    color: #666;
+
+    font-size: 14px;
+
+    margin: 5px 0;
+}
+
+
+/* ================= HISTORY ACTIONS ================= */
+
+.history-actions {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 10px;
+}
+
+
+/* ================= STATUS ================= */
+
+.history-status {
+
+    background-color: #d1e7dd;
+
+    color: #146c43;
+
+    padding: 8px 14px;
+
+    border-radius: 5px;
+
+    font-weight: bold;
+
+    font-size: 13px;
+}
+
+
+/* ================= PRESCRIPTION BUTTON ================= */
+
+.prescription-btn {
+
+    background-color: #0b4f8a;
+
+    color: white;
+
+    border: none;
+
+    padding: 9px 14px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+
+.prescription-btn:hover {
+
+    background-color: #083b67;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    .header {
+
+        padding: 15px 20px;
+    }
+
+
+    .history-container {
+
+        width: 94%;
+    }
+
+
+    .history-item {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+
+    .history-actions {
+
+        align-items: flex-start;
+    }
+
+}

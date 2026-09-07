@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Medico Connect - Consultation History</title>
+
+    <link rel="stylesheet" href="history.css">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header class="header">
+
+        <div class="logo">
+            MEDICO CONNECT
+        </div>
+
+        <a href="doctor_dashboard.html" class="back-btn">
+            ← Dashboard
+        </a>
+
+    </header>
+
+
+    <!-- Main Content -->
+
+    <main class="history-container">
+
+        <h1>Consultation History</h1>
+
+        <p class="subtitle">
+            View your previous patient consultations
+        </p>
+
+
+        <!-- Search -->
+
+        <section class="search-card">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search patient name..."
+                onkeyup="searchHistory()">
+
+        </section>
+
+
+        <!-- History -->
+
+        <section class="history-card">
+
+            <h2>Previous Consultations</h2>
+
+            <div id="historyList">
+
+
+                <!-- Consultation 1 -->
+
+                <div class="history-item">
+
+                    <div class="history-info">
+
+                        <h3>Sarah Johnson</h3>
+
+                        <p>
+                            <strong>Date:</strong>
+                            05 September 2026
+                        </p>
+
+                        <p>
+                            <strong>Reason:</strong>
+                            General health consultation
+                        </p>
+
+                        <p>
+                            <strong>Fee:</strong>
+                            ₹800
+                        </p>
+
+                    </div>
+
+
+                    <div class="history-actions">
+
+                        <span class="history-status">
+                            Completed
+                        </span>
+
+                        <button
+                            class="prescription-btn"
+                            onclick="viewPrescription('sarah')">
+
+                            View Prescription
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Consultation 2 -->
+
+                <div class="history-item">
+
+                    <div class="history-info">
+
+                        <h3>Emily Davis</h3>
+
+                        <p>
+                            <strong>Date:</strong>
+                            03 September 2026
+                        </p>
+
+                        <p>
+                            <strong>Reason:</strong>
+                            Follow-up consultation
+                        </p>
+
+                        <p>
+                            <strong>Fee:</strong>
+                            ₹650
+                        </p>
+
+                    </div>
+
+
+                    <div class="history-actions">
+
+                        <span class="history-status">
+                            Completed
+                        </span>
+
+                        <button
+                            class="prescription-btn"
+                            onclick="viewPrescription('emily')">
+
+                            View Prescription
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Consultation 3 -->
+
+                <div class="history-item">
+
+                    <div class="history-info">
+
+                        <h3>David Wilson</h3>
+
+                        <p>
+                            <strong>Date:</strong>
+                            01 September 2026
+                        </p>
+
+                        <p>
+                            <strong>Reason:</strong>
+                            Health check-up
+                        </p>
+
+                        <p>
+                            <strong>Fee:</strong>
+                            ₹700
+                        </p>
+
+                    </div>
+
+
+                    <div class="history-actions">
+
+                        <span class="history-status">
+                            Completed
+                        </span>
+
+                        <button
+                            class="prescription-btn"
+                            onclick="viewPrescription('david')">
+
+                            View Prescription
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="history.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Medico Connect - Doctor Dashboard</title>
+
+    <link rel="stylesheet" href="doctor_dashboard.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+
+        <div class="logo">
+            <span>MEDICO</span> CONNECT
+        </div>
+
+        <div class="doctor-info">
+            <span>Welcome, Doctor 👨‍⚕️</span>
+            <button onclick="logout()">Logout</button>
+        </div>
+
+    </header>
+
+
+    <!-- Main Dashboard -->
+    <main class="dashboard">
+
+        <h1>Doctor Dashboard</h1>
+        <p class="subtitle">Manage your consultations and patients</p>
+
+
+        <!-- Summary Cards -->
+        <section class="summary-cards">
+
+            <div class="card">
+                <div class="card-icon">👥</div>
+                <h3>Total Patients</h3>
+                <p class="number">120</p>
+            </div>
+
+
+            <div class="card">
+                <div class="card-icon">🩺</div>
+                <h3>Today's Consultations</h3>
+                <p class="number">8</p>
+            </div>
+
+
+            <div class="card">
+                <div class="card-icon">🔔</div>
+                <h3>Pending Requests</h3>
+                <p class="number">3</p>
+            </div>
+
+
+            <div class="card">
+                <div class="card-icon">✓</div>
+                <h3>Completed Consultations</h3>
+                <p class="number">15</p>
+            </div>
+
+        </section>
+
+
+        <!-- Consultation Requests -->
+        <section class="section">
+
+            <div class="section-header">
+                <h2>🔔 Consultation Requests</h2>
+
+                <a href="consultation_requests.html">
+                    View All
+                </a>
+            </div>
+
+            <div class="request-box">
+
+                <div>
+                    <h3>New Consultation Request</h3>
+                    <p>Patient: Patient Name</p>
+                    <p>Requested Time: 5:00 PM</p>
+                </div>
+
+                <div class="request-buttons">
+                    <button class="accept">Accept</button>
+                    <button class="reject">Reject</button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Quick Access -->
+        <section class="section">
+
+            <h2>Quick Access</h2>
+
+            <div class="quick-access">
+
+                <a href="doctor_profile.html" class="quick-card">
+                    <span>👨‍⚕️</span>
+                    <h3>My Profile</h3>
+                    <p>View and manage profile</p>
+                </a>
+
+
+                <a href="availability.html" class="quick-card">
+                    <span>🕐</span>
+                    <h3>Availability</h3>
+                    <p>Manage consultation timings</p>
+                </a>
+
+
+                <a href="patients.html" class="quick-card">
+                    <span>👥</span>
+                    <h3>My Patients</h3>
+                    <p>View patient information</p>
+                </a>
+
+
+                <a href="history.html?role=doctor" class="quick-card">
+                    <span>📋</span>
+                    <h3>History</h3>
+                    <p>View consultation history</p>
+                </a>
+
+
+                <a href="payment.html?role=doctor" class="quick-card">
+                    <span>💳</span>
+                    <h3>Payment</h3>
+                    <p>View payment details</p>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- Today's Availability -->
+        <section class="section availability-box">
+
+            <h2>🕐 Today's Availability</h2>
+
+            <div class="availability-content">
+
+                <div>
+                    <p>Status</p>
+                    <strong class="available">● Available</strong>
+                </div>
+
+                <div>
+                    <p>Consultation Hours</p>
+                    <strong>4:00 PM - 7:00 PM</strong>
+                </div>
+
+                <a href="availability.html">
+                    Manage Availability
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="doctor_dashboard.js"></script>
+
+</body>
+</html>

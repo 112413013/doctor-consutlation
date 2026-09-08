@@ -52,8 +52,8 @@ document.getElementById("patientForm").addEventListener("submit", function(event
     }
 
     // Password validation
-    if (password.length < 6) {
-        alert("Password must contain at least 6 characters");
+    if (password.length !== 8) {
+        alert("Password must contain exactly 8 characters");
         return;
     }
 
@@ -64,4 +64,7 @@ document.getElementById("patientForm").addEventListener("submit", function(event
     }
 
     alert("Patient Registration Successful!");
+
+    // Send the validated data to PHP
+    this.submit();
 });

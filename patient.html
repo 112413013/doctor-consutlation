@@ -10,19 +10,19 @@
 <div class="container">
     <h1>Patient Registration</h1>
 
-    <form id="patientForm">
+    <form id="patientForm" action="patient_register.php" method="POST">
 
         <label>Patient Name</label>
-        <input type="text" id="name" placeholder="Enter your name">
+        <input type="text" id="name" name="patient_name" placeholder="Enter your name">
 
         <label>Email</label>
-        <input type="text" id="email" placeholder="Enter your email">
+        <input type="text" id="email" name="email" placeholder="Enter your email">
 
         <label>Phone Number</label>
-        <input type="text" id="phone" placeholder="Enter phone number">
+        <input type="text" id="phone" name="phone_number" placeholder="Enter phone number">
 
         <label>Age</label>
-        <input type="number" id="age" placeholder="Enter your age">
+        <input type="number" id="age" name="age" placeholder="Enter your age">
 
         <label>Gender</label>
         <div class="gender">
@@ -31,10 +31,10 @@
         </div>
 
         <label>Password</label>
-        <input type="password" id="password" placeholder="Enter password">
+        <input type="password" id="password" name="password" placeholder="Enter password">
 
         <label>Confirm Password</label>
-        <input type="password" id="confirmPassword" placeholder="Confirm password">
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password">
 
         <button type="submit">Register</button>
 

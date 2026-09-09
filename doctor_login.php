@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $password = $_POST["password"];
 
-    $sql = "SELECT * FROM doctors WHERE email = ?";
+    $sql = "SELECT * FROM doctors WHERE email = ? LIMIT 1";
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $email);

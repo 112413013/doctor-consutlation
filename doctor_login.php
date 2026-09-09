@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["doctor_name"] = $doctor["doctor_name"];
             $_SESSION["doctor_email"] = $doctor["email"];
 
-            header("Location: doctor_dashboard.php");
+            header("Location: doctor_dashboard.html");
             exit();
 
         } else {

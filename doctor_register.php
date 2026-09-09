@@ -2,117 +2,58 @@
 
 include "db.php";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$sql = "SELECT * FROM doctors ORDER BY doctor_id DESC";
+$result = $conn->query($sql);
 
-    $doctor_name = $_POST["doctorName"];
-    $email = $_POST["doctorEmail"];
-    $phone = $_POST["doctorPhone"];
-    $gender = $_POST["gender"];
-    $specialization = $_POST["specialization"];
-    $qualification = $_POST["qualification"];
-    $registration_number = $_POST["registrationNumber"];
-    $experience = $_POST["experience"];
-    $hospital = $_POST["hospital"];
+?>
 
-    // Get selected available days
-    $available_days = isset($_POST["availableDays"])
-        ? implode(", ", $_POST["availableDays"])
-        : "";
+<!DOCTYPE html>
+<html>
 
-    $available_time = $_POST["availableTime"];
-    $password = $_POST["doctorPassword"];
+<head>
+    <title>Doctor Details</title>
+</head>
 
-    // Check whether email already exists
-    $check_sql = "SELECT doctor_id FROM doctors WHERE email = ?";
-    $check_stmt = $conn->prepare($check_sql);
+<body>
 
-    if (!$check_stmt) {
-        die("Error: " . $conn->error);
+<h1>Doctor Details</h1>
+
+<?php
+
+if ($result->num_rows > 0) {
+
+    while ($doctor = $result->fetch_assoc()) {
+
+        echo "<div>";
+
+        echo "<h2>" . htmlspecialchars($doctor["doctor_name"]) . "</h2>";
+        echo "<p>Email: " . htmlspecialchars($doctor["email"]) . "</p>";
+        echo "<p>Phone: " . htmlspecialchars($doctor["phone"]) . "</p>";
+        echo "<p>Gender: " . htmlspecialchars($doctor["gender"]) . "</p>";
+        echo "<p>Specialization: " . htmlspecialchars($doctor["specialization"]) . "</p>";
+        echo "<p>Qualification: " . htmlspecialchars($doctor["qualification"]) . "</p>";
+        echo "<p>Registration Number: " . htmlspecialchars($doctor["registration_number"]) . "</p>";
+        echo "<p>Experience: " . htmlspecialchars($doctor["experience"]) . " years</p>";
+        echo "<p>Hospital: " . htmlspecialchars($doctor["hospital"]) . "</p>";
+        echo "<p>Available Days: " . htmlspecialchars($doctor["available_days"]) . "</p>";
+        echo "<p>Available Time: " . htmlspecialchars($doctor["available_time"]) . "</p>";
+        echo "<p>Consultation Fee: ₹" . htmlspecialchars($doctor["consultation_fee"]) . "</p>";
+
+        echo "<hr>";
+
+        echo "</div>";
     }
-
-    $check_stmt->bind_param("s", $email);
-    $check_stmt->execute();
-    $check_stmt->store_result();
-
-    if ($check_stmt->num_rows > 0) {
-
-        echo "<script>
-                alert('Email already registered. Please use another email.');
-                window.location.href='doctor.html';
-              </script>";
-
-        $check_stmt->close();
-        $conn->close();
-        exit();
-    }
-
-    $check_stmt->close();
-
-    // Hash password
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-    // Insert doctor details
-    $sql = "INSERT INTO doctors
-    (
-        doctor_name,
-        email,
-        phone,
-        gender,
-        specialization,
-        qualification,
-        registration_number,
-        experience,
-        hospital,
-        available_days,
-        available_time,
-        password
-    )
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-    $stmt = $conn->prepare($sql);
-
-    if (!$stmt) {
-        die("Prepare failed: " . $conn->error);
-    }
-
-    $stmt->bind_param(
-        "sssssssissss",
-        $doctor_name,
-        $email,
-        $phone,
-        $gender,
-        $specialization,
-        $qualification,
-        $registration_number,
-        $experience,
-        $hospital,
-        $available_days,
-        $available_time,
-        $hashed_password
-    );
-
-    if ($stmt->execute()) {
-
-        echo "<script>
-                alert('Doctor registered successfully!');
-                window.location.href='doctor.html';
-              </script>";
-
-    } else {
-
-        echo "<script>
-                alert('Registration failed. Please try again.');
-                window.location.href='doctor.html';
-              </script>";
-    }
-
-    $stmt->close();
-    $conn->close();
 
 } else {
 
-    header("Location: doctor.html");
-    exit();
+    echo "<p>No doctors found.</p>";
+
 }
 
+$conn->close();
+
 ?>
+
+</body>
+
+</html>

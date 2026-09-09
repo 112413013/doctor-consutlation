@@ -1,31 +1,197 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Doctor Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Medico Connect - Doctor Login</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #dff6ff, #eef2ff);
+        }
+
+        .login-container {
+            width: 380px;
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            text-align: center;
+            color: #1769aa;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 7px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #1769aa;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #1769aa;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0d4f80;
+        }
+    </style>
+
 </head>
 
 <body>
 
-    <h1>Doctor Login</h1>
+    <div class="login-container">
 
-    <form method="POST" action="doctor_login.php">
+        <h1>Doctor Login</h1>
 
-        <label>Email</label>
-        <br>
-        <input type="email" name="email" placeholder="Enter your email" required>
+        <p class="subtitle">Login to your Medico Connect account</p>
 
-        <br><br>
+        <form id="loginForm" method="POST" action="doctor_login.php">
 
-        <label>Password</label>
-        <br>
-        <input type="password" name="password" placeholder="Enter your password" required>
+            <label for="email">Email</label>
 
-        <br><br>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+            >
 
-        <button type="submit">Login</button>
+            <p id="emailError" class="error">
+                Please enter a valid email.
+            </p>
 
-    </form>
+
+            <label for="password">Password</label>
+
+            <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+            >
+
+            <p id="passwordError" class="error">
+                Please enter your password.
+            </p>
+
+
+            <button type="submit">Login</button>
+
+        </form>
+
+    </div>
+
+
+    <script>
+
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value.trim();
+
+            let emailError = document.getElementById("emailError");
+            let passwordError = document.getElementById("passwordError");
+
+            let valid = true;
+
+            emailError.style.display = "none";
+            passwordError.style.display = "none";
+
+
+            // Email validation
+            if (email === "") {
+
+                emailError.textContent = "Email is required.";
+                emailError.style.display = "block";
+
+                valid = false;
+
+            } else if (!email.includes("@")) {
+
+                emailError.textContent = "Enter a valid email.";
+                emailError.style.display = "block";
+
+                valid = false;
+            }
+
+
+            // Password validation
+            if (password === "") {
+
+                passwordError.textContent = "Password is required.";
+                passwordError.style.display = "block";
+
+                valid = false;
+            }
+
+
+            // Stop form only if validation fails
+            if (!valid) {
+
+                event.preventDefault();
+
+            }
+
+            // If valid, the form automatically goes to:
+            // doctor_login.php
+
+        });
+
+    </script>
 
 </body>
 

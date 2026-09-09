@@ -22,9 +22,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $available_time = $_POST["availableTime"];
     $password = $_POST["doctorPassword"];
 
-    // Hash password before storing
+    // Check whether email already exists
+    $check_sql = "SELECT doctor_id FROM doctors WHERE email = ?";
+    $check_stmt = $conn->prepare($check_sql);
+
+    if (!$check_stmt) {
+        die("Error: " . $conn->error);
+    }
+
+    $check_stmt->bind_param("s", $email);
+    $check_stmt->execute();
+    $check_stmt->store_result();
+
+    if ($check_stmt->num_rows > 0) {
+
+        echo "<script>
+                alert('Email already registered. Please use another email.');
+                window.location.href='doctor.html';
+              </script>";
+
+        $check_stmt->close();
+        $conn->close();
+        exit();
+    }
+
+    $check_stmt->close();
+
+    // Hash password
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
+    // Insert doctor details
     $sql = "INSERT INTO doctors
     (
         doctor_name,
@@ -43,6 +70,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     $stmt = $conn->prepare($sql);
+
+    if (!$stmt) {
+        die("Prepare failed: " . $conn->error);
+    }
 
     $stmt->bind_param(
         "sssssssissss",
@@ -69,11 +100,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     } else {
 
-        echo "Error: " . $stmt->error;
+        echo "<script>
+                alert('Registration failed. Please try again.');
+                window.location.href='doctor.html';
+              </script>";
     }
 
     $stmt->close();
     $conn->close();
+
+} else {
+
+    header("Location: doctor.html");
+    exit();
 }
 
 ?>

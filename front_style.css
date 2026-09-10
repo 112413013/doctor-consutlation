@@ -1,0 +1,575 @@
+/* =========================
+   BASIC SETTINGS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #faf7ff;
+    color: #32156b;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    width: 100%;
+    height: 95px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 9%;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border-bottom: 1px solid #eee5ff;
+
+    position: relative;
+    z-index: 10;
+}
+
+
+/* Logo */
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 58px;
+    height: 58px;
+}
+
+.logo svg {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Brand */
+
+.brand-name {
+    font-size: 30px;
+    font-weight: 700;
+    color: #35106f;
+}
+
+.brand-name .vibe {
+    color: #8b52d4;
+}
+
+
+/* Navigation */
+
+.navigation {
+    display: flex;
+    gap: 42px;
+}
+
+.navigation a {
+    text-decoration: none;
+
+    color: #452276;
+
+    font-size: 16px;
+
+    padding: 8px 0;
+
+    transition: 0.3s;
+}
+
+.navigation a:hover {
+    color: #8b52d4;
+}
+
+.navigation a.active {
+    color: #5b27a6;
+    border-bottom: 2px solid #743bc0;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    min-height: calc(100vh - 95px);
+
+    position: relative;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    padding: 55px 7% 40px;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            #ffffff 0%,
+            #faf6ff 45%,
+            #eee4ff 100%
+        );
+}
+
+
+/* Decorative circles */
+
+.purple-circle {
+    position: absolute;
+
+    border-radius: 50%;
+
+    opacity: 0.5;
+
+    pointer-events: none;
+}
+
+.circle-one {
+    width: 280px;
+    height: 280px;
+
+    background: #e4d4ff;
+
+    left: -130px;
+    top: -100px;
+}
+
+.circle-two {
+    width: 240px;
+    height: 240px;
+
+    background: #ddd0ff;
+
+    right: -110px;
+    bottom: -80px;
+}
+
+
+/* =========================
+   HERO LOGO
+========================= */
+
+.hero-logo {
+
+    width: 120px;
+    height: 120px;
+
+    margin: 0 auto 5px;
+
+    animation: floatLogo 4s ease-in-out infinite;
+}
+
+.hero-logo svg {
+    width: 100%;
+    height: 100%;
+}
+
+
+@keyframes floatLogo {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.hero h1 {
+
+    font-size: 64px;
+
+    font-weight: 750;
+
+    letter-spacing: -2px;
+
+    color: #35106f;
+
+    margin-bottom: 10px;
+}
+
+.hero h1 .vibe {
+    color: #8b52d4;
+
+    font-style: italic;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   SLOGAN
+========================= */
+
+.hero h2 {
+
+    font-size: 25px;
+
+    font-weight: 500;
+
+    letter-spacing: 2px;
+
+    color: #4d2a80;
+
+    margin-bottom: 18px;
+}
+
+.hero h2 span {
+    color: #8b52d4;
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.hero-description {
+
+    max-width: 650px;
+
+    margin: 0 auto 38px;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #684d91;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features {
+
+    max-width: 1050px;
+
+    margin: 0 auto 38px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+
+/* Feature card */
+
+.feature-card {
+
+    padding: 18px 12px;
+
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+
+    transform: translateY(-7px);
+}
+
+
+/* Icon */
+
+.feature-icon {
+
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 13px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 30px;
+
+    background: #eee3ff;
+
+    box-shadow:
+        0 8px 25px rgba(91, 39, 166, 0.10);
+}
+
+
+/* Heading */
+
+.feature-card h3 {
+
+    font-size: 17px;
+
+    color: #3c176f;
+
+    margin-bottom: 8px;
+}
+
+
+/* Text */
+
+.feature-card p {
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    color: #775d9d;
+
+}
+
+
+/* =========================
+   GET STARTED BUTTON
+========================= */
+
+.get-started {
+
+    border: none;
+
+    outline: none;
+
+    cursor: pointer;
+
+    padding: 16px 48px;
+
+    border-radius: 35px;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4b1990,
+            #8c50d7
+        );
+
+    box-shadow:
+        0 10px 25px rgba(91, 39, 166, 0.25);
+
+    transition: 0.3s;
+}
+
+
+.get-started span {
+
+    display: inline-block;
+
+    margin-left: 12px;
+
+    font-size: 22px;
+
+    transition: 0.3s;
+}
+
+
+.get-started:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(91, 39, 166, 0.35);
+}
+
+
+.get-started:hover span {
+
+    transform: translateX(6px);
+}
+
+
+/* =========================
+   BOTTOM SLOGAN
+========================= */
+
+.bottom-slogan {
+
+    margin-top: 28px;
+
+    font-size: 15px;
+
+    font-style: italic;
+
+    color: #8a6aae;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-section {
+
+    min-height: 350px;
+
+    padding: 80px 10%;
+
+    text-align: center;
+
+    background: white;
+}
+
+.about-section h2,
+.contact-section h2 {
+
+    font-size: 34px;
+
+    color: #35106f;
+
+    margin-bottom: 20px;
+}
+
+.about-section p,
+.contact-section p {
+
+    max-width: 700px;
+
+    margin: auto;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color: #725a91;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-section {
+
+    padding: 80px 10%;
+
+    text-align: center;
+
+    background: #f2eaff;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    padding: 25px;
+
+    text-align: center;
+
+    background: #321064;
+
+    color: #e9dcff;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .header {
+        padding: 0 5%;
+    }
+
+    .navigation {
+        gap: 20px;
+    }
+
+    .features {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .header {
+
+        height: auto;
+
+        padding: 18px 5%;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .navigation {
+        gap: 18px;
+    }
+
+    .navigation a {
+        font-size: 14px;
+    }
+
+    .hero {
+        padding-top: 35px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero h2 {
+        font-size: 19px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .brand-name {
+        font-size: 25px;
+    }
+
+}
